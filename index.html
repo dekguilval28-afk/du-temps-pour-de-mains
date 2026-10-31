@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Du temps pour de mains : une entraide locale, gratuite et conviviale entre habitants.">
+  <meta name="theme-color" content="#f6f4ec">
+  <title>Du temps pour de mains — L'entraide locale, tout simplement</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Du temps pour de mains, accueil">
+      <span class="brand-mark">↔</span>
+      <span>Du temps <em>pour de mains</em></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <nav id="mainNav">
+      <a href="#principe">Le principe</a>
+      <a href="#annonces">Les coups de main</a>
+      <a href="#comment">Comment ça marche</a>
+      <a class="nav-cta" href="#publier">Proposer mon aide</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">LA SOLIDARITÉ À CÔTÉ DE CHEZ VOUS</p>
+        <h1>Un peu de temps.<br><span>Un vrai coup de main.</span></h1>
+        <p class="hero-text">Et si on s'entraidait simplement ? Donnez un peu de votre temps, recevez un coup de main à votre tour. Ici, les échanges sont gratuits et humains.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#annonces">Trouver un coup de main</a>
+          <a class="button button-light" href="#principe">Découvrir le principe</a>
+        </div>
+        <div class="trust-line"><span>♡</span> Gratuit · Local · Basé sur le partage</div>
+      </div>
+      <div class="hero-art" aria-label="Illustration symbolisant l'entraide entre voisins">
+        <div class="sun"></div>
+        <div class="art-card card-one"><span>🌱</span><b>Un geste</b><small>qui compte</small></div>
+        <div class="art-card card-two"><span>🤝</span><b>Un échange</b><small>sans argent</small></div>
+        <div class="art-note">Le temps donné<br>rapproche les gens.</div>
+        <div class="art-circle"></div>
+      </div>
+    </section>
+
+    <section class="principle section" id="principe">
+      <div class="section-heading">
+        <p class="eyebrow">L'IDÉE EST SIMPLE</p>
+        <h2>Le temps est notre richesse commune.</h2>
+        <p>Chacun possède un savoir-faire, une disponibilité ou une petite compétence qui peut rendre service à quelqu'un près de chez soi.</p>
+      </div>
+      <div class="principle-grid">
+        <article class="feature"><span class="feature-icon">⏳</span><h3>Je donne du temps</h3><p>Je propose un service, une présence ou une compétence, selon mes possibilités.</p></article>
+        <article class="feature"><span class="feature-icon">💬</span><h3>Nous échangeons</h3><p>Nous prenons contact et convenons ensemble d'un moment et des modalités.</p></article>
+        <article class="feature"><span class="feature-icon">🌼</span><h3>L'entraide circule</h3><p>Chacun peut aider un jour et avoir besoin d'aide un autre jour.</p></article>
+      </div>
+      <p class="principle-note">Aucun paiement, aucune prestation commerciale : le projet repose sur l'entraide volontaire entre habitants.</p>
+    </section>
+
+    <section class="listings section" id="annonces">
+      <div class="section-heading row-heading">
+        <div><p class="eyebrow">PRÈS DE CHEZ VOUS</p><h2>Les coups de main</h2><p>Découvrez des exemples d'entraide à proposer ou à rechercher.</p></div>
+        <a class="button button-primary" href="#publier">＋ Déposer une annonce</a>
+      </div>
+      <div class="filters">
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Rechercher un service…"></label>
+        <select id="categoryFilter" aria-label="Filtrer par catégorie">
+          <option value="">Toutes les catégories</option>
+          <option>Jardin</option><option>Informatique</option><option>Courses</option><option>Bricolage léger</option><option>Animaux</option><option>Autre</option>
+        </select>
+        <select id="typeFilter" aria-label="Filtrer par type">
+          <option value="">Toutes les annonces</option><option value="offer">Je propose</option><option value="need">J'ai besoin</option>
+        </select>
+      </div>
+      <div class="listing-grid" id="listingGrid" aria-live="polite"></div>
+      <p class="demo-note">Exemples de présentation : les annonces ci-dessus sont fictives et servent à illustrer le fonctionnement de la page.</p>
+    </section>
+
+    <section class="how section" id="comment">
+      <div class="section-heading"><p class="eyebrow">EN TROIS ÉTAPES</p><h2>Comment ça marche ?</h2></div>
+      <div class="steps">
+        <div class="step"><b>01</b><h3>Je consulte</h3><p>Je parcours les propositions et les demandes autour de moi.</p></div>
+        <div class="step"><b>02</b><h3>Je prends contact</h3><p>Je précise mon besoin ou ma disponibilité et nous échangeons directement.</p></div>
+        <div class="step"><b>03</b><h3>Nous nous entraidons</h3><p>Nous nous mettons d'accord librement. Le temps et le respect sont au cœur de l'échange.</p></div>
+      </div>
+    </section>
+
+    <section class="publish section" id="publier">
+      <div class="publish-intro"><p class="eyebrow">À VOUS DE JOUER</p><h2>Un coup de main à proposer ?</h2><p>Faites connaître votre disponibilité ou expliquez le petit service dont vous auriez besoin.</p><div class="publish-symbol">✳</div></div>
+      <form id="listingForm" class="publish-form">
+        <label>Je souhaite
+          <select id="listingType" required><option value="offer">Proposer mon aide</option><option value="need">Demander un coup de main</option></select>
+        </label>
+        <label>Code d'accès (5 chiffres)<input id="listingCode" type="password" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="•••••" autocomplete="off" required></label>
+        <label>Titre de l'annonce<input id="listingTitle" maxlength="70" placeholder="Ex. Aide pour arroser les plantes" required></label>
+        <label>Catégorie
+          <select id="listingCategory" required><option value="Jardin">Jardin</option><option value="Informatique">Informatique</option><option value="Courses">Courses</option><option value="Bricolage léger">Bricolage léger</option><option value="Animaux">Animaux</option><option value="Autre">Autre</option></select>
+        </label>
+        <label>Votre commune
+          <select id="listingTown" required><option value="">Choisissez votre commune</option><option value="Blévy">Blévy</option><option value="Maillebois">Maillebois</option><option value="Dampierre-sur-Blévy">Dampierre-sur-Blévy</option></select>
+        </label>
+        <label>Quelques précisions<textarea id="listingDescription" rows="3" maxlength="400" placeholder="Présentez votre proposition ou votre besoin…" required></textarea></label>
+        <button class="button button-primary" type="submit">Ajouter l'annonce</button>
+        <p class="form-feedback" id="formFeedback" role="status"></p>
+        <p class="form-small">Version de démonstration : les annonces sont enregistrées uniquement dans ce navigateur.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand footer-brand" href="#"><span class="brand-mark">↔</span><span>Du temps <em>pour de mains</em></span></a>
+    <p>Faisons grandir l'entraide, un geste après l'autre.</p>
+    <small>© <span id="year"></span> Du temps pour de mains · Projet d'entraide locale gratuite</small>
+  </footer>
+</body>
+</html>
