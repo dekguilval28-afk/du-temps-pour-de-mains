@@ -1,7 +1,7 @@
 // ===== Configuration Supabase (à remplacer par vos valeurs) =====
 // Dans Supabase : Project Settings > API
-const SUPABASE_URL = "https://VOTRE-PROJET.supabase.co";
-const SUPABASE_ANON_KEY = "VOTRE_CLE_ANON_PUBLIQUE";
+const SUPABASE_URL = "https://https://lusozvruydiqtybrrfvn.supabase.co.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx1c296dnJ1eWRpcXR5YnJyZnZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM0MzYzNzMsImV4cCI6MjEwOTAxMjM3M30.gbc6PsqZGLanmoO6rwomE3oOxpRwwcYj38EPPgE3hek";
 
 const ALLOWED_TOWNS = ["Blévy", "Maillebois", "Dampierre-sur-Blévy"];
 const CATEGORIES = ["Jardin", "Informatique", "Courses", "Bricolage léger", "Animaux", "Autre"];
